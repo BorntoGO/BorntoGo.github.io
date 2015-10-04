@@ -1,0 +1,126 @@
+
+
+
+
+
+##HM-10蓝牙模块
+
+默认波特率
+
+
+
+
+其他相关资料
+
+www.
+
+
+
+
+
+#RPi.GPIO模块
+GPIO:General Purpose Input Output
+可以理解为通用输入输出
+
+
+
+import RPi.GPIO as GPIO
+
+GPIO遵循
+两种模式
+Broadcom
+
+(另一种是)
+
+
+1.功能物理引脚： 从左到右，从上到下：左边基数，右边偶数：1-40
+2.BCM： 编号侧重 CPU 寄存器，根据 BCM2835 的 GPIO 寄存器编号。
+
+
+
+
+
+
+
+GPIO.setmode(GPIO.BOARD)
+  # or
+GPIO.setmode(GPIO.BCM)
+
+
+
+
+
+
+
+
+
+可以用getmode()函数detect一下.
+
+##设置一个channnel
+也可以加上initial
+GPIO.setup(channel, GPIO.OUT, initial=GPIO.HIGH)
+通常是OUT对应IN,HIGH对应LOW反例不再列出.
+
+
+多个channel
+c_lsit = [1, 2]
+GPIO.setup(c_list,GPIO.OUT)
+in
+
+
+
+GPIO模块可以
+
+##Output
+设置GPIO针脚的输出状态
+GPIO.output(channel, state)
+状态可以0/GPIO.LOW/False 或者相反.
+
+###数个channel
+
+c_list = [11,12]                             # tuples也可
+GPIO.output(c_list, GPIO.LOW)                # sets all to GPIO.LOW
+GPIO.output(c_list, (GPIO.HIGH, GPIO.LOW))   # 1HIGH ,2LOW ,?setpu应该也可以类似,明天试一下.
+
+
+
+##Input
+读取GPIO针脚值
+GPIO.input(channel)
+返回上例output中的状态值.
+
+##Cleanup
+GPIO.cleanup(channel)   #list,tuples皆可
+
+
+
+
+
+
+#pybluez
+
+##
+
+查询蓝牙
+bluetooth.discover_devices(lookup_names = True)
+
+
+
+
+
+
+
+
+
+
+
+参考:
+
+
+
+笔记:
+/boot/config.txt
+
+以上内容皆参考自官方文档.
+
+

@@ -1,0 +1,31 @@
+流程:
+
+1. 在github.com建立一个同用户名的仓库,新建一个index.html
+
+    打开<用户名>.github.io 
+
+
+2. 选择一个同步方式,有官方推荐的J,另外有各种方式,我选择的是,使用js语言,主题是
+3. 安装 npm命令
+   部署
+   测试
+   push工具,我选了git,设置
+   
+   
+   
+   
+我是直接建在Dropbox/blog里边的,
+cd blog
+hexo init hblog
+hexo new [layout] test
+使用布局,在生成一个test.md文件,直接编辑即可.
+hexo generate
+
+部署
+需要先配置git,设置用户名和email,
+hexo deploy
+部署前先gen
+输入用户名和密码
+
+
+

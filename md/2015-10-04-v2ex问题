@@ -1,0 +1,76 @@
+- bluez 与 BLE
+- bluez 怎么启用uart支持
+
+
+
+- 编译是否有问题?(参数没加上?)
+- 修改内核,启用uart支持?
+
+
+- 步骤问题?
+
+   
+   
+   树莓派上bluez怎么支持串口BLE设备
+   
+   我用的蓝牙模块是HM-10,串口连接,之前作为从设备已经和手机端通过pyserial模块正常收发数据.
+   现在想通过两个蓝牙模块分别装在两个树莓派上,一个是主设备(假装手机),一个从设备.通过pyblue模块通信(依赖bluez).
+   
+   网上搜了一下说,bluez4.x不支持BLE设备,需要自己编译5.x
+   我照着教程都做了,完了使用hcitool dev显示空.
+
+ 
+   我的问题是:
+   我的编译是否存在什么问题,比如某些参数没加上?
+   教程都是用的USB蓝牙,是不是需要专门开启UART支持?如何开启?
+   或者用的命令就不对?
+   
+   参考了下面的第一个链接,
+   
+    http://www.elinux.org/RPi_Bluetooth_LE
+ 
+ http://www.tik.ee.ethz.ch/~beutel/pub/bluezhowto.pdf
+ 
+ http://www.lairdtech.com/brandworld/library/Application%20Note%20-%20BT830%20BCCMD%20tool%20on%20Linux.pdf
+ 
+ http://www.stlinux.com/kernel/bluetooth/BlueZ-setup
+ http://www.stlinux.com/kernel/bluetooth/how-to-run-BlueZ
+ 
+ http://www.lanwind.com/arm-bt.php
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+我用的蓝牙模块是HM-10,串口连接,之前作为从设备已经和手机端通过pyserial模块正常收发数据.
+
+现在想通过两个蓝牙模块分别装在两个树莓派上,一个是主设备(假装手机),一个从设备.通过pybluez模块通信(依赖bluez).
+       
+网上搜了一下说,bluez4.x不支持BLE设备,需要自己编译5.x
+我照着教程做了,完了使用hcitool dev显示空.
+
+我的问题是:
+
+- 我的编译是否存在什么问题,比如某些参数没加上?
+- 教程都是用的USB蓝牙,是不是需要专门开启UART支持?如何开启?
+- 或者用的命令就不对?
+   
+参考资料(参考了第一个链接):
+
+<http://www.elinux.org/RPi_Bluetooth_LE>
+ 
+<http://www.tik.ee.ethz.ch/~beutel/pub/bluezhowto.pdf>
+ 
+<http://www.lairdtech.com/brandworld/library/Application%20Note%20-%20BT830%20BCCMD%20tool%20on%20Linux.pdf>
+ 
+<http://www.stlinux.com/kernel/bluetooth/BlueZ-setup>
+
+<http://www.stlinux.com/kernel/bluetooth/how-to-run-BlueZ>
+ 
+<http://www.lanwind.com/arm-bt.php>
