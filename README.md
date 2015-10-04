@@ -1,13 +1,3 @@
-* Download all source code (either via git or just download as zip)
+<p>This blog is based on <a href="https://github.com/sneezry/Hooloo">Hooloo</a> using the Architect theme by <a href="http://sneezry.com">Sneezry</a> based on <a href="http://twitter.com/jasonlong">Jason Long</a>.</p>
 
-* Create a new repo named username.github.io which username is your name on Github
-
-* Copy all code to this repo
-
-* Edit `javascripts/config.js` to your settings
-
-* Edit `index.html` title to yours (L21 & L29)
-
-* Edit CNAME if you have a custom domain
-
-Live DEMO: <http://hooloo.github.io>
+基于GitHub的前端轻量级博客系统 : <https://github.com/Sneezry/Hooloo>
