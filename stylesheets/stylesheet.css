@@ -1,4 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -15,49 +15,50 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-	display: block;
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
 ol, ul {
-	list-style: none;
+  list-style: none;
 }
 blockquote, q {
-	quotes: none;
+  quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+  content: '';
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* LAYOUT STYLES */
 body {
   font-size: 15px;
   line-height: 1.5; 
-  background: #eee;
+  background: white;
+  background-size: 100%;
   font-family: Arial, serif;
   font-weight: 400;
-  color: #666;
+  color: #222;
 }
 
 a {
-  color: #2879d0;
+  color: #007711;
 }
 a:hover {
   color: #2268b2;
@@ -67,8 +68,8 @@ header {
   padding-top: 40px;
   padding-bottom: 40px;
   font-family: Arial, serif; 
-  background: #2e7bcf;
-  border-bottom: solid 1px #275da1;
+  background: #eee url(/images/spider.png) center top no-repeat;
+  background-size: 75px 100px;
   position: relative;
   overflow: hidden;
 }
@@ -76,10 +77,10 @@ header {
 header h1 {
   letter-spacing: -1px;
   font-size: 72px;
-  color: #fff;
+  color: #222;
   line-height: 1;
   margin-bottom: 0.2em;
-  width: 540px;
+  display: inline-block;
 }
 
 header h2 {
@@ -96,8 +97,7 @@ postlist {
   display: block;
   font-family: Arial, sans-serif;
   padding: 10px;
-  background: url(../images/bg_item.png) bottom;
-  border-bottom: 1px #e2e2e2 solid;
+  border-bottom: 1px rgba(226,226,226,0.5) solid;
 }
 
 postlist:last-child {
@@ -108,8 +108,16 @@ postlist a {
   border-bottom: 1px transparent solid;
 }
 
-postlist a:hover {
-  border-bottom: 1px #2879d0 dashed;
+#main-content postlist > a {
+  color: #222;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+#main-content postlist > a:hover {
+  color: #2879d0;
 }
 
 .prev_page, .next_page {
@@ -131,8 +139,69 @@ postlist a:hover {
   margin: 0 auto;
 }
 
+#rsshover {
+  position: absolute;
+  display: block;
+  width: 100px;
+  height: 60px;
+  top: 0;
+  left: 420px;
+}
+
+#rsshover:hover #rss {
+  opacity: 1;
+  animation: fadein 0.2s 1 ease-out;
+  -moz-animation: fadein 0.2s 1 ease-out;
+  -webkit-animation: fadein 0.2s 1 ease-out;
+  -o-animation: fadein 0.2s 1 ease-out;
+}
+
+#rss {
+  position: absolute;
+  opacity: 0;
+  display: block;
+  top: 10px;
+  left: 70px;
+  width: 50px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+  background: white;
+  border-radius: 3px;
+  border: 1px solid black;
+  animation: fadeout 0.2s 1 ease-in;
+  -moz-animation: fadeout 0.2s 1 ease-in;
+  -webkit-animation: fadeout 0.2s 1 ease-in;
+  -o-animation: fadeout 0.2s 1 ease-in;
+}
+
+#rss:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 5px;
+  left: -5px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid white;
+}
+
+.date span {
+  font-family: 'Sneezry Blog';
+  margin-right: 30px;
+}
+
 #content_inner {
-  padding: 20px 20px 20px 40px;
+  padding: 20px 20px 0 40px;
+}
+
+#content_inner p {
+  word-break: break-all;
+  word-wrap: break-word;
 }
 
 #content-wrapper {
@@ -152,9 +221,11 @@ postlist a:hover {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  -webkit-box-shadow: 1px 2px 3px #ddd;
-  box-shadow: 1px 2px 3px #ddd;
-  background: white;
+  background: rgba(255,255,255,0.5);
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 #main-content img {
@@ -188,14 +259,7 @@ aside#sidebar {
   padding: 20px;
   float: right;
   position: relative;
-  background: white;
   font-size: 12px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  line-height: 1.3;
-  -webkit-box-shadow: 1px 2px 3px #ddd;
-  box-shadow: 1px 2px 3px #ddd;
 }
 
 aside#sidebar p.repo-owner,
@@ -235,7 +299,6 @@ a.button small {
 header span.searchbar {
   position: absolute;
   padding: 10px;
-  background: #e1e1e1;
   right: 0;
   bottom: -40px;
   -webkit-border-radius: 8px;
@@ -248,12 +311,14 @@ header span.searchbar {
   line-height: 20px;
   width: 240px;
   font-size: 16px;
-  padding: 0 4px 0 20px;
+  padding: 4px;
+  padding-left: 20px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
   background: url(../images/search-icon.png) no-repeat left center white;
-  border: #CCCCCC 2px solid;
+  border: #CCCCCC 1px solid;
+  outline: none;
 }
 
 .cse .gsc-control-cse, .gsc-control-cse {
@@ -623,21 +688,81 @@ dl dd {
 }
 
 footer {
-  border-top: 1px #e2e2e2 solid;
-  margin: 40px 10px 0 10px;
-  padding-top: 20px;
-  padding-bottom: 30px;
+  border-top: 1px rgba(255,255,255,0.5) solid;
+  margin-top: 40px;
+  padding: 20px 0;
   font-size: 13px;
-  color: #aaa;
+  color: #555;
   text-align: center;
+  background: #eee;
+}
+
+footer .links {
+  position: relative;
+  width: 940px;
+  margin: 0 auto;
+  text-align: left;
+  font-family: Arial, sans-serif;
+}
+
+footer .links a {
+  margin-left: 20px;
+}
+
+footer .links a:hover {
+  text-decoration: underline;
+}
+
+footer .links a:hover {
+  color: #003333;
+}
+
+footer .links .right {
+  position: absolute;
+  right: 0;
+  top: -8px;
+}
+
+footer .links .right2{
+  position: absolute;
+  right: 100px;
+  top: -8px;
 }
 
 footer a {
   color: #666;
 }
+
 footer a:hover {
   color: #444;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* MISC */
 .clearfix:after {
@@ -672,7 +797,7 @@ footer a:hover {
   padding: 0 5px;
   text-align: center;
   color: white;
-  background: gray;
+  background: #222;
   border: none;
 }
 
@@ -690,9 +815,10 @@ footer a:hover {
   height: 20px;
   line-height: 20px;
   font-size: 14px;
-  color: gray;
+  color: #222;
   font-style: italic;
   display: inline-block;
+  color: gray;
 }
 
 #recent_comments h2 {
@@ -713,9 +839,20 @@ footer a:hover {
 
 /* Tablet Portrait size to standard 960 (devices and browsers) */
 @media only screen and (min-width: 768px) and (max-width: 959px) {
-  .inner {
+  .inner, footer .links {
     width: 740px;
   }
+  footer .links {
+    text-align: center;
+  }
+  footer .links .right {
+    display: none;
+  }
+
+  footer .links .right2 {
+    display: none;
+  }
+
   header h1, header h2 {
     width: 340px;
   }
@@ -745,11 +882,26 @@ footer a:hover {
 
 /* All Mobile Sizes (devices and browser) */
 @media only screen and (max-width: 767px) {
-  .inner {
+  .inner, footer .links {
     width: 93%;
+  }
+  footer .links {
+    text-align: center;
+  }
+  footer .links .right {
+    display: none;
+  }
+  footer .links .right2 {
+    display: none;
+  }
+  body {
+    background: #eee;
+    color: #666;
   }
   header {
     padding: 20px 0;
+    background: #2e7bcf;
+    border-bottom: solid 1px #275da1;
   }
   header .inner {
     position: relative;
@@ -759,6 +911,7 @@ footer a:hover {
   }
   header h1 {
     font-size: 48px;
+    color: white;
   }
   header h2 {
     font-size: 24px;
@@ -815,8 +968,29 @@ footer a:hover {
     padding-right: 0;
     margin-left: 0;
   }
+  #main-content {
+    background: white;
+    -webkit-box-shadow: 1px 2px 3px #ddd;
+    box-shadow: 1px 2px 3px #ddd;
+  }
   #content_inner {
     padding: 20px;
+  }
+  postlist {
+    border-bottom: 1px #e2e2e2 solid;
+  }
+  #main-content postlist > a {
+    color: #2879d0;
+  }
+  .post_date {
+    color: gray;
+  }
+  .disqus_count a {
+    background: gray;
+  }
+  footer {
+    border-top: 1px #e2e2e2 solid;
+    color: #aaa;
   }
 }
 
