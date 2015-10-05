@@ -14,5 +14,5 @@ var branch = '';								//Branch of your blog repository. 'master' is default if
 //var repos = 'blog';	
 //var sitetitle = 'Sneezry';
 //var rss = '';
-//var suffix = '.md';
+var suffix = '.md';
 //var branch = 'gh-pages';
