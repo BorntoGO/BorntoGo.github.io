@@ -701,9 +701,11 @@ footer {
   padding: 20px 0;
   font-size: 13px;
   /*color: #555;*/
-  color: #999;  
+  color: #999;
   text-align: center;
-  background: #eee;
+  background: #FFFCFC;
+  margin:0 auto;
+  width: 950px;
 }
 
 footer .links {
