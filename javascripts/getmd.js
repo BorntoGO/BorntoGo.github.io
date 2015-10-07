@@ -20,44 +20,48 @@ var isroot=((repos.indexOf('github.com')==-1 && repos.indexOf('github.io')==-1)?
 
 main();
 
-function main(){
+function main(instant){
 	var disqusCounts = document.getElementsByName('commentscount');
 	for(var i=0; i<disqusCounts.length; i++){
 		commentscount[Number(disqusCounts[i].id.substr(5))] = disqusCounts[i].innerText;
 	}
 	content.innerHTML = '';
-	loading.style.display = 'block';
-	if(path.split('/')[1] == 'search'){
-		search(path.split('/')[2]);
+	if(!instant){
+		loading.style.display = 'block';
 	}
-	else if(path && path.split('/')[1] != 'page'){
-		disqus_url = hostbase + lowerCase(path);
-		//disqus_url = disqus_url.toLowerCase();
-		showpost(path);
-		(function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-	}
-	else{
-		//backhome.style.display = 'none';
-		document.title = sitetitle;
-		if(postList){
-			showlist(postList);
+	setTimeout(function(){
+		if(path.split('/')[1] == 'search'){
+			search(path.split('/')[2]);
+		}
+		else if(path && path.split('/')[1] != 'page'){
+			disqus_url = hostbase + lowerCase(path);
+			//disqus_url = disqus_url.toLowerCase();
+			showpost(path);
+			(function() {
+	            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	        })();
 		}
 		else{
-			pending = true;
-			document.getElementById('takinglonger').style.display = 'none';
-			chktakinglonger();
-			var el = document.createElement('script');
-			el.src = 'https://api.github.com/repos/' + githubname + '/' + repos + '/contents/md?callback=showlist'+(branch?('&ref='+branch):'');
-			document.getElementsByTagName('head')[0].appendChild(el);
+			//backhome.style.display = 'none';
+			document.title = sitetitle;
+			if(postList){
+				showlist(postList);
+			}
+			else{
+				pending = true;
+				document.getElementById('takinglonger').style.display = 'none';
+				chktakinglonger();
+				var el = document.createElement('script');
+				el.src = 'md/list.js';
+				document.getElementsByTagName('head')[0].appendChild(el);
+			}
 		}
-	}
+	}, instant?0:1000);
 }
 
-function home(){
+function home(instant){
 	path = '';
 	dis.style.display = 'none';
 	dis.innerHTML = '';
@@ -68,7 +72,7 @@ function home(){
 		path = '/page/'+page;
 		window.history.pushState(null, '', (isroot?'':('/'+repos))+'/#!/page/'+page);
 	}
-	main();
+	main(instant);
 }
 
 function lowerCase(path){
@@ -96,27 +100,44 @@ function loadXMLDoc(url){
 			if (xmlhttp.readyState==4){// 4 = "loaded"
 				pending = false;
 				document.getElementById('takinglonger').style.display = 'none';
-				loading.style.display = 'none';
 				//backhome.style.display = 'block';
 				if (xmlhttp.status==200){// 200 = "OK"
-					var blog_text = xmlhttp.responseText;
-					var encoded = false;
-					if(blog_text.substr(0,2)=='::'){
-						blog_text = Base64.decode(blog_text.substr(2));
-						encoded = true;
-					};
-					blog_text = filterJekyllHeader(blog_text);
-					var converter = new Showdown.converter();
-					content.innerHTML = '<div id="content_inner"><div id="back_home"><a href="/" onclick="home();return false;">'+sitetitle+'</a><span>&nbsp;›&nbsp;</span></div><div id="post_title">' + decodeUtf8(getPostName(path)) + (encoded?Base64.decode('PHN1cCBzdHlsZT0iZm9udC1zaXplOjAuNWVtO3ZlcnRpY2FsLWFsaWduOiBzdXBlcjsiIHRpdGxlPSLmraTmlofnq6Dlt7Looqvph43mlrDnvJbnoIHku6XourLpgb/lrqHmn6UiPuKYmuiiq+e8lueggeeahOWGheWuuTwvc3VwPg=='):'') + '</div>' + converter.makeHtml(blog_text) + '<div class="date">Posted at ' + pdate + '</div></div>';
-					if(dis){
-						dis.style.display = 'block';
-					}
+					setTimeout(function(){
+						loading.style.display = 'none';
+						var blog_text = xmlhttp.responseText;
+						var encoded = false;
+						if(blog_text.substr(0,2)=='::'){
+							blog_text = Base64.decode(blog_text.substr(2));
+							encoded = true;
+						};
+						blog_text = filterJekyllHeader(blog_text);
+						content.style.display = 'none';
+						content.innerHTML = blog_text;
+						CodePenEmbed.init();
+						MathJax.Hub.Typeset();
+						blog_text = content.innerHTML;
+						blog_text = blog_text.replace(/&lt;/g, '<');
+						blog_text = blog_text.replace(/&gt;/g, '>');
+						blog_text = blog_text.replace(/&amp;/g, '&');
+						blog_text = blog_text.replace(/&nbsp;/g, ' ');
+						var converter = new Showdown.converter();
+						content.innerHTML = '<div id="content_inner"><div id="back_home"><a href="/" onclick="home();return false;">'+sitetitle+'</a><span>&nbsp;›&nbsp;</span></div><div id="post_title">' + decodeUtf8(getPostName(path)) + (encoded?Base64.decode('PHN1cCBzdHlsZT0iZm9udC1zaXplOjAuNWVtO3ZlcnRpY2FsLWFsaWduOiBzdXBlcjsiIHRpdGxlPSLmraTmlofnq6Dlt7Looqvph43mlrDnvJbnoIHku6XourLpgb/lrqHmn6UiPuKYmuiiq+e8lueggeeahOWGheWuuTwvc3VwPg=='):'')  + '<div id="shorturl">Checking short URL for this post...</div></div>' + converter.makeHtml(blog_text) + '<div class="date"><span>S</span>Posted at ' + pdate + '</div></div>';
+						content.style.display = 'block';
+						if(dis){
+							dis.style.display = 'block';
+						}
+						setTimeout(function(){
+							shorturl();
+						},200);
+					}, 1000);
 				}
 				else if(xmlhttp.status==404) {
+					loading.style.display = 'none';
 					document.title = 'Not Found - '+sitetitle;
 					content.innerHTML = '<img src="images/despicable_me.png" />';
 				}
 				else {
+					loading.style.display = 'none';
 					document.title = 'Technology Problem - '+sitetitle;
 					content.innerHTML = '<div id="takinglonger"><blockquote>We meet a problem when try to handle ' + path + ' (Err: ' + xmlhttp.status + ').</blockquote></div>';
 				}
@@ -124,6 +145,18 @@ function loadXMLDoc(url){
 		}
 		xmlhttp.open("GET",url,true);
 		xmlhttp.send(null);
+	}
+}
+
+function shorturl(url){
+	if(url && document.getElementById('shorturl')){
+		document.getElementById('shorturl').innerHTML = 'Short URL for this post: <span>'+url+'</span>';
+	}
+	else{
+		var hash = encodeURIComponent(decodeUtf8(location.hash.substr(3)));
+		var el = document.createElement('script');
+		el.src = '//sneezryworks.sinaapp.com/blogshorturl.php?url='+encodeURIComponent('http://sneezry.com/'+hash)+'&callback=shorturl';
+		document.getElementsByTagName('head')[0].appendChild(el);
 	}
 }
 
@@ -136,7 +169,7 @@ function chktakinglonger(){
 }
 
 function showpost(path){
-	var url = location.protocol + '//' + location.hostname + (isroot?'':('/'+repos))+'/md/' + path.substr(1).replace(/\//g, '-')+(suffix?suffix:'');
+	var url = 'md/' + path.substr(1).replace(/\//g, '-')+(suffix?suffix:'');
 	document.title = decodeUtf8(getPostName(path)) + ' - '+sitetitle;
 	pdate = path.substr(1).split('/')[0]+'-'+path.substr(1).split('/')[1]+'-'+path.substr(1).split('/')[2];
 	loadXMLDoc(url);
@@ -175,14 +208,16 @@ function showlist(list){
 	else if(page>1 && page*20<list.data.length){
 		txt += '<postlist><a class="prev_page" href="'+(isroot?'':('/'+repos))+'/#!/page/'+(page+1)+'">←较早的文章</a><a class="next_page" href="'+(isroot?'':('/'+repos))+'/#!/page/'+(page-1)+'">较新的文章→</a><div style="clear:both"></div></postlist>';
 	}
-	loading.style.display = 'none';
-	content.innerHTML = txt;
-	(function () {
-        var s = document.createElement('script'); s.async = true;
-		s.type = 'text/javascript';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
+	setTimeout(function(){
+		loading.style.display = 'none';
+		content.innerHTML = txt;
+		(function () {
+	        var s = document.createElement('script'); s.async = true;
+			s.type = 'text/javascript';
+	        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+	        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+	    }());
+	}, 1000);
 }
 
 function encodePath(path, isdecode){
@@ -227,7 +262,7 @@ function getPostName(name){
 	for(var i=4; i<name.length; i++){
 		newName += '-'+name[i];
 	}
-	return newName.replace(/_/g, ' ');
+	return newName?newName.replace(/_/g, ' '):'404';
 }
 
 function filterJekyllHeader(post){
