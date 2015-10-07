@@ -73,10 +73,9 @@ header {
   /*padding-top: 40px;
   padding-bottom: 40px;*/
   padding: 0.4em;
-  font-family: Arial, serif; 
-  background: #EDF4ED url(/images/spider.png) center top no-repeat;
-  background-size: 75px 100px;
-  /* background-size:  蜘蛛大小 */
+  font-family: "Hiragino Sans GB", Arial, serif;
+  background: #EDF4ED /*url(/images/spider.png) center top no-repeat*/;
+  /*background-size: 45px 45px;*/
   position: relative;
   overflow: hidden;
 }
@@ -104,7 +103,8 @@ postlist {
   display: block;
   font-family: Arial, sans-serif;
   padding: 10px;
-  border-bottom: 1px rgba(226,226,226,0.5) solid;
+/*  background: url(../images/bg_item.png) bottom;*/
+  border-bottom: 1px rgba(226,226,226,0.5) dotted;
 }
 
 postlist:last-child {
@@ -145,63 +145,6 @@ postlist a {
   width: 940px;
   margin: 0 auto;
 }
-
-#rsshover {
-  position: absolute;
-  display: block;
-  width: 100px;
-  height: 60px;
-  top: 0;
-  left: 420px;
-}
-
-#rsshover:hover #rss {
-  opacity: 1;
-  animation: fadein 0.2s 1 ease-out;
-  -moz-animation: fadein 0.2s 1 ease-out;
-  -webkit-animation: fadein 0.2s 1 ease-out;
-  -o-animation: fadein 0.2s 1 ease-out;
-}
-
-#rss {
-  position: absolute;
-  opacity: 0;
-  display: block;
-  top: 10px;
-  left: 70px;
-  width: 50px;
-  height: 20px;
-  line-height: 20px;
-  font-size: 12px;
-  font-weight: bold;
-  text-align: center;
-  color: black;
-  background: white;
-  border-radius: 3px;
-  border: 1px solid black;
-  animation: fadeout 0.2s 1 ease-in;
-  -moz-animation: fadeout 0.2s 1 ease-in;
-  -webkit-animation: fadeout 0.2s 1 ease-in;
-  -o-animation: fadeout 0.2s 1 ease-in;
-}
-
-#rss:after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  top: 5px;
-  left: -5px;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-right: 5px solid white;
-}
-
-/*zhushi.date span {
-  font-family: 'Sneezry Blog';
-  margin-right: 30px;
-}
-*/
 #content_inner {
   padding: 20px 20px 0 40px;
 }
@@ -306,6 +249,7 @@ a.button small {
 header span.searchbar {
   position: absolute;
   padding: 10px;
+#  background: #e1e1e1;
   right: 0;
   /*bottom: -40px;*/
   -webkit-border-radius: 0px;
@@ -701,7 +645,7 @@ footer {
   padding: 20px 0;
   font-size: 13px;
   /*color: #555;*/
-  color: #999;
+  color: #666;
   text-align: center;
   background: #FFFCFC;
   margin:0 auto;
@@ -799,7 +743,6 @@ footer a:hover {
   height: 20px;
   line-height: 20px;
   font-size: 14px;
-  color: #222;
   font-style: italic;
   display: inline-block;
   color: gray;
@@ -815,7 +758,7 @@ footer a:hover {
   top: 0;
 }
 
-/*
+
 /* #Media Queries
 ================================================== */
 
@@ -823,7 +766,7 @@ footer a:hover {
 @media only screen and (max-width: 959px) {}
 
 /* Tablet Portrait size to standard 960 (devices and browsers) */
-/*
+
 @media only screen and (min-width: 768px) and (max-width: 959px) {
   .inner, footer .links {
     width: 740px;
@@ -838,17 +781,14 @@ footer a:hover {
   footer .links .right2 {
     display: none;
   }
-  aside#sidebar {
-    display: none;
-  }
   header h1, header h2 {
     width: 340px;
   }
   header h1 {
-    font-size: 60px;
+    font-size: 45px;
   }
   header h2 {
-    font-size: 30px;
+    font-size: 26px;
   }
   .gotop {
     margin-left: 615px;
@@ -866,13 +806,23 @@ footer a:hover {
     padding-right: 0;
     margin-left: 0;
   }
+
+
+  header {
+    padding: 0.4em;
+    font-family: "Hiragino Sans GB", Arial, serif;
+    background: #EDF4ED;
+    position: relative;
+    overflow: hidden;
+  }
+
 }
-*/
+
 
 /* All Mobile Sizes (devices and browser) */
-@media only screen and (max-width: 959px) {
+@media only screen and (max-width: 767px) {
   .inner, footer .links {
-    width: 93%;
+    width: 90%;
   }
   footer .links {
     text-align: center;
@@ -888,10 +838,16 @@ footer a:hover {
     color: #666;
   }
   header {
-    padding: 20px 0;
-    background: #2e7bcf;
-    border-bottom: solid 1px #275da1;
+    /*padding-top: 40px;
+    padding-bottom: 40px;*/
+    padding: 0.4em;
+    font-family: "Hiragino Sans GB", Arial, serif;
+    background: #239133;
+    position: relative;
+    overflow: hidden;
+    border-bottom: solid 1px #0ea10b;
   }
+
   header .inner {
     position: relative;
   }
@@ -932,28 +888,13 @@ footer a:hover {
   .gotop {
     display: none;
   }
-  #main-content,
-/*
-  aside#sidebar {
+  #main-content {
     float: none;
     width: 100% ! important;
   }
-  #aside#sidebar {
-    background-image: none;
-    margin-top: 20px;
-    border-top: solid 1px #ddd;
-    padding: 20px 0;
-    min-height: 0;
-  }
-  #aside#sidebar a.button {
-    display: none;
-  }
-*/  
   aside#sidebar {
     display: none;
   }
-
-
 
   #main-content h1:before,
   #main-content h2:before,
@@ -977,7 +918,7 @@ footer a:hover {
     border-bottom: 1px #e2e2e2 solid;
   }
   #main-content postlist > a {
-    color: #2879d0;
+    color: #239133;
   }
   .post_date {
     color: gray;
@@ -985,9 +926,12 @@ footer a:hover {
   .disqus_count a {
     background: gray;
   }
+
   footer {
-    border-top: 1px #e2e2e2 solid;
-    color: #aaa;
+    border-top: 1px #ddd solid;
+    color: gray;
+    width: 90%;
+    text-align: center;
   }
 }
 
