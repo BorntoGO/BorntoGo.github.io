@@ -1,5 +1,9 @@
 ## Hello World!
 
+
+   ![测试](http://7xnb4a.com1.z0.glb.clouddn.com/img/201508IMGP5187.JPG)
+
+
    以前特别讨厌`Hello World`这两个词,好二的感觉,最近不知怎么就喜欢上了,就跟以前讨厌的红色一样,有时候不免这样悲哀的想.
    
    難道你也見一個鍾意一個, 每個月看中數十個
