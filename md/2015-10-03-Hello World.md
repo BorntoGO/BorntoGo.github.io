@@ -1,38 +1,22 @@
 ## Hello World!
 
-   以前特别讨厌这两个词,好二的感觉,可后来不知怎么就喜欢上了,就跟以前讨厌的红色一样,有时候不免这样悲哀的想.
+   以前特别讨厌`Hello World`这两个词,好二的感觉,最近不知怎么就喜欢上了,就跟以前讨厌的红色一样,有时候不免这样悲哀的想.
    
    難道你也見一個鍾意一個, 每個月看中數十個
-   
-   
-   
-   上个月也有只兔子暂住,会要食吃,求抚摸,还会记仇,有时候会笨得蠢萌蠢萌的,昨晚炒饭时自然给他留下一截胡萝卜,才想起来已经送走了.
-   
-   
-   
-   
-   
+      
    
    之所以折腾这个是因为最近迷上了Markdown,
    
-   看了一下,Jell,
-  试用了Hexo,选了xx主题,虽然很简单,但是限制还是太多了,
+   看了一下官方推荐[Jekyll](https://github.com/jekyll/jekyll)(Ruby),感觉太麻烦了,选了[Hexo](http://hexo.io)(Node.js),选了[NexT主题](https://github.com/iissnan/hexo-theme-next),虽然很简单,但是限制还是太多了,
+   最后选了[Hooloo](https://github.com/sneezry/Hooloo),相较前两个[Hooloo](https://github.com/sneezry/Hooloo)这个则是本地和github都是Markdown文件,访问时候再生成html(原理看这篇,太天才了),
   
-  通常的方式是,在本地使用markdown书写,生成html文件,同步到github,
-  二hooloo这个则是本地和github都是服务器,访问时候再生成html,
-  
-  相比较
-  
-  完全不只用到了JS,,对我来说就连本地生成html这步也省略, 我只要在本地生成markdown然后用客户端同步一下就完成了发布.
+ 所以用户只要在本地用Markdown写完然后同步一下就完成了发布.
   
   
+只需要一个轻量级的,支持Markdown语法,可以自己控制.
+   
+   
   
-  
-  (原理看这篇,太天才了),
-  
-  
-  
-  需要一个轻量级的,
    
    
    
@@ -40,11 +24,7 @@
    
    
    
-   
-   
-   
-   
-   @anxin 同学在加班之余帮我搞定了favicon.ico和RSS订阅两个图标,然而RSS功能还没添加,
+   @anxin 同学在加班之余帮我搞定了favicon.ico和RSS订阅两个图标,然而RSS功能还没添加.
    
    图片放到七牛上了,1G空间暂时够用了 ,
    
