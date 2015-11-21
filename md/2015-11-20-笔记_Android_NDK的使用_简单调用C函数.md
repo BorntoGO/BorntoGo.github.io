@@ -1,5 +1,3 @@
-##Android调用C函数
-
 ###概念准备
 为了完成标题,先看几个概念:
 
@@ -134,13 +132,8 @@ NDK就是交叉编译工具.
 虽然工具不同,方式不一,蛋整体的思路是一样的,具体操作可以参照第二个链接,不同的地方主要是上面第6条,另外NDK的Samples目录下也有一下Sample.
 
 - [Android 开发 之 JNI入门 - NDK从入门到精通](http://blog.csdn.net/shulianghan/article/details/18964835)
-
 - [【android ndk】macos环境下Android Studio中利用gradle编译jni模块及配置](http://blog.csdn.net/ashqal/article/details/21869151)
-
 - [Android NDK开发入门实例](http://blog.csdn.net/redoffice/article/details/6654714)
-
 - [JNI 和 NDK 入门](http://xiazdong.me/2015/09/17/introduction-jni-ndk/)
-
 - [JNI数据类型](http://www.jianshu.com/p/f1134503cd8e)
-
 - [官方链接,蛋是用的Eclips](http://developer.android.com/intl/zh-cn/ndk/index.html)
