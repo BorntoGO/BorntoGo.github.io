@@ -2,10 +2,12 @@
 ---
 layout: post
 title: 使用 mocha 进行 RESTful API 测试
-category: [testing, node.js]
+category: [testing]
 tags: [mocha, RESTful, testing, node.js]
 
 ---
+
+
 
 简单来说mocha是一个测试框架,支持BDD和TDD不同风格的接口,支持before,after等前/后置条件.可以在这个框架下使用各种断言库(断言就是作出一个预测,不符合则抛出,mocha就是整合这些断言结果).
 
