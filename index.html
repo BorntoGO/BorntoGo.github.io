@@ -1,109 +1,30 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta content="I write code." name="description">
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/loading.css" />
-
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <script src="javascripts/config.js"></script>
-    <script src="javascripts/base64.js"></script>
-    <script src="javascripts/showdown.js"></script>
-    <!-- Change this to your site title -->
-    <title>BorntoGO</title>
-  </head>
-
-  <body>
-    <header>
-      <!-- canvas id="gameoflife"></canvas -->
-      <div class="inner">
-        <!-- Change this to your site title -->
-        <a href="/" onclick = "return false"><h1 onclick="home()">BrontoGo</h1></a>
-        <span class="searchbar">
-        <input type="text" id="searchbar" onclick="cache()" onkeyup="if(this.value){doSearch(this.value)}else{home()}">
-        </span>
-      </div>
-    </header>
-
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <div class="gotop" onclick="goToTop()">
-            <div class="gotopinner">
-              <div class="topleft"></div>
-              <div class="topright"></div>
-              <div class="topbody"></div>
-            </div>
-          </div>
-          <div id="loading">
-            <div class="loading" index="0"></div>
-            <div class="loading" index="1"></div>
-            <div class="loading" index="2"></div>
-            <div class="loading" index="3"></div>
-            <div class="loading" index="4"></div>
-          </div>
-          <a href="/" onclick="return false">
-            <div id="backhome" onclick="home()">
-              <div class="backhome">
-                <div class="backhomeinner">
-                  <div class="backleft"></div>
-                  <div class="backright"></div>
-                  <div class="backbody"></div>
-                </div>
-              </div>
-            </div>
-          </a>
-          <div id="content">
-          </div>
-          <div id="takinglonger"><blockquote>This is taking longer than normal, and there may be some problems in your network.</blockquote></div>
-          <div id="disqus_thread" style="display:none"></div>
-        </section>
-
-        <aside id="sidebar">
-          <img src="http://img3.douban.com/icon/ul38803020-43.jpg" />
-          <p class="bottommargin">君子使物，不為物使 ——「管子」</p>
-          <p>This blog is based on <a href="https://github.com/sneezry/Hooloo">Hooloo</a> using the Architect theme by <a href="https://github.com/BorntoGO/">Myself</a>.</p>
-          <p><!--script src="http://img3.douban.com/f/shire/9b6158f3d4ef80b33bc0f9fb8bfb1781609ba441/js/radiowidget_plain.js?doubanid=38803020&maxresults=5&color=0"></script-->
-            <script src="http://img3.douban.com/f/shire/9e4df2475de830f8f347ad9053d8a3be5a4fdf08/js/radiowidget.js?doubanid=38803020&maxresults=5"></script> </p>
-        </aside>
-      </div>
-
-      <footer>
-        <div class="links">
-          <span >&copy;2015 madaooxx</span>
-          <a href="mailto:madaooxx@gmail.com">Gmail</a>
-          <a href="https://github.com/BorntoGO">GitHub</a>
-          <a href="http://www.douban.com/people/alexngy/">Douban</a>
-          <a href=https://plus.google.com/u/0/101560714005619481772/>Google+</a>
-          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" class="right2 do"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a>
-          <a href="https://www.github.com" class="right do"><img alt="Host on Github" src="/images/github.png" width="84"></a>
-        </div>
-      </footer>
-    </div>
-  <script src="javascripts/search.js"></script>
-  <script src="javascripts/getmd.js"></script>
-  <!--
-  <script src="/javascripts/main.js"></script>
-  -->
-  <!-- script src="javascripts/gameoflife.js"></script -->
-
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-68588768-1', 'auto');
-  ga('send', 'pageview');
-
-  </script>
-  </body>
-</html>
+---
+layout: default
+---
+<div class="home">
+  {% for page in site.posts limit: 1 %}
+  <header class="post-header">
+    <h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
+    <p class="meta"><i class="fa fa-calendar"></i> {{ page.date | date: "%Y-%m-%d" }}&nbsp&nbsp&nbsp<i class="fa fa-folder-open"></i>{% if page.category %} <a href="/categories/#{{page.category}}">{{ page.category }}</a> {% endif %}&nbsp&nbsp&nbsp<i class="fa fa-tags"></i>&nbsp{% for tag in page.tags %}&nbsp<a href="/tags/#{{ tag }}">{{ tag }}</a>{% endfor %}</p>
+  </header>
+  <article class="post-content">
+  {{ page.content }}
+  </article>
+  {% endfor %}
+  <ul class="posts">
+      <!--<li class="listing-seperator">✔ Yesterday you said tomorrow</li>-->
+      <li class="listing-seperator">✔ 🆈🅴🆂🆃🅴🆁🅳🅰🆈  🆈🅾🆄 🆂🅰🅸🅳 🆃🅾🅼🅾🆁🆁🅾🆆.</li>
+  {% capture month %}{{ site.time | date:"%m"}}{% endcapture %}
+  {% for post in site.posts limit: 3 %}
+    {% capture m %}{{ post.date | date:"%m"}}{% endcapture %}
+    {% if month == m %}
+    {% break %}
+    {% endif %}
+    <li class="listing-item">
+      <time datetime="{{ post.date | date:"%Y-%m-%d"}}">{{ post.date | date:"%Y-%m-%d" }}</time>
+      <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+    <li class="listing-seperator"><a href="/archive/">Long ago</a></li>
+  </ul>
+</div>

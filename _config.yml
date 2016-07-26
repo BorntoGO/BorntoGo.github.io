@@ -1,0 +1,34 @@
+# Site settings
+title: BorntoGo
+email: justregisterid@gmail.com
+description: "Android,HTML,CSS,Node"
+permalink: /:year/:month/:day/:title.html
+baseurl: ""
+url: "http://borntogo.github.io"
+atom-baseurl: "http://borntogo.github.io"
+author: "Kyle Yuan"
+
+# Build settings
+# permalink: date
+
+highlighter: pygments
+markdown: redcarpet
+redcarpet:
+  extensions: [fenced_code_blocks,no_intra_emphasis,strikethrough,no_intra_emphasis,autolink,tables]
+
+navigations:
+  - title: About
+    class: fa fa-list-ul
+    href: /about/
+  - title: Archive
+    class: fa fa-tags
+    href: /archive/
+  - title: Categories
+    class: fa fa-user
+    href: /categories/
+  - title: Tags
+    class: fa fa-film
+    href: /tags/
+  - title: Rss
+    class: fa fa-rss
+    href: /atom.xml

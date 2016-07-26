@@ -1,3 +1,7 @@
-<p>This blog is based on <a href="https://github.com/sneezry/Hooloo">Hooloo</a> using the Architect theme by <a href="http://sneezry.com">Sneezry</a> based on <a href="http://twitter.com/jasonlong">Jason Long</a>.</p>
+个人博客,请随意使用
 
-基于GitHub的前端轻量级博客系统 : <https://github.com/Sneezry/Hooloo>
+PS:如果使用此博客,请修改多说
+
+PSS: 首页文章是在categray == life里的第一篇
+
+(*^__^*)
