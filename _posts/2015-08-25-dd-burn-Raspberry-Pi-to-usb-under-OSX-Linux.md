@@ -1,8 +1,8 @@
 ---
 layout: post
 title: MAC(OS X)/Linux 下的刻录树莓派镜像的方法
-category: [OS X, Linux]
-tags: [OS X, Linux,Raspberry Pi]
+category: [MAC/OS X, Linux]
+tags: [MAC/OS X, Linux,Raspberry Pi]
 keywords:
 description:
 ---
