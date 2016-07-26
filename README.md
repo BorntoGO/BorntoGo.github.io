@@ -1,7 +1,12 @@
-个人博客,请随意使用
+个人博客，主题修改自 [https://github.com/taizilongxu/jekyll_blog_source](https://github.com/taizilongxu/jekyll_blog_source)
 
-PS:如果使用此博客,请修改多说
+使用请fork 这里 [https://github.com/BorntoGO/jekyll_blog_source](https://github.com/BorntoGO/jekyll_blog_source)
 
-PSS: 首页文章是在categray == life里的第一篇
+使用注意：
 
-(*^__^*)
+- 首页文章列表改为最近10篇中的3篇 --> index.html/{% for post in site.related_posts limit: 3 %}；
+- 修改多说评论为Disqus,请替换帐号ID --> _includes/custom/disqus.html；
+- 请替换 Google analytics 帐号ID --> _includes/head.html
+- github发布时，请修改 `.gitignore` 文件，去除 `_posts` 过滤；
+
+

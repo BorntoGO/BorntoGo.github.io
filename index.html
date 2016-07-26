@@ -15,7 +15,7 @@ layout: default
       <!--<li class="listing-seperator">✔ Yesterday you said tomorrow</li>-->
       <li class="listing-seperator">✔ 🆈🅴🆂🆃🅴🆁🅳🅰🆈  🆈🅾🆄 🆂🅰🅸🅳 🆃🅾🅼🅾🆁🆁🅾🆆.</li>
   {% capture month %}{{ site.time | date:"%m"}}{% endcapture %}
-  {% for post in site.posts limit: 3 %}
+  {% for post in site.related_posts limit: 3 %}
     {% capture m %}{{ post.date | date:"%m"}}{% endcapture %}
     {% if month == m %}
     {% break %}
