@@ -31,7 +31,6 @@ describe("Restful APIs test - GET",function(){
       .get("/api/v1/recommend/tags?pageSize=4")
       .expect(200)
       .end(function (err,res) {
-        res.status.should.equal(200);
         res.body.state.should.equal(0);
         done();
       });
