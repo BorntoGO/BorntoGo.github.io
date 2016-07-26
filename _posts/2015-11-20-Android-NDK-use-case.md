@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Android NDK 的使用:简单调用C函数
-category: life
-tags: NDK
-keywords: 测试
+title: Android NDK 的简单使用
+category: Android
+tags: [Android, NDK]
+keywords:
 description:
 ---
 
-###概念准备
+### 概念准备
 为了完成标题,先看几个概念:
 
 - JNI: Java Native Interface,Java提供,用来实现Java和C的互相调用,但是使Java丧失了跨平台的特性.
@@ -19,13 +19,13 @@ NDK就是交叉编译工具.
   - 算法复杂或资源消耗大的模块.
   - 可以避免核心代码被反编译.
 
-###工具准备
+### 工具准备
 下面主要讲如何在MAC OS X 上使用NDK
 
-- 安装AndroidStudio,选择AS是因为各种强大的插件,自动补全,纠错提示,最后还有官方出品.
+- 安装AndroidStudio.
 - 安装NDK,官网下载,解压`chmod a+x xx.bin` `./xx.bin`
 
-###开始
+### 开始
 1. 新建一个空白工程,具体内容请参考:[Building Your First App](http://developer.android.com/intl/zh-cn/training/basics/firstapp/index.html)
 
 2. 使用Project视图,在项目主目录右键新建一个名为`method`的模块,
@@ -129,15 +129,14 @@ NDK就是交叉编译工具.
         setContentView(tv);
        
    
-   再加几个输入框和按钮就可以做成一个计算器了,嗯.
+   嗯，最后是丑陋不堪的效果图：
    
-   最后不想放上来的效果图😭
-   
-   ![效果图](../images/2015112001.JPG)
+   ![效果图](../img/2015112001.JPG)
    
 
+代码地址 <https://github.com/BorntoGO/NDK-demo>
 
-###相关链接
+### 相关链接
 虽然工具不同,方式不一,蛋整体的思路是一样的,具体操作可以参照第二个链接,不同的地方主要是上面第6条,另外NDK的Samples目录下也有一下Sample.
 
 - [Android 开发 之 JNI入门 - NDK从入门到精通](http://blog.csdn.net/shulianghan/article/details/18964835)
