@@ -9,17 +9,17 @@ description:
 
 
 使用场景:
-![QQ20151105-1](../img/2015/QQ20151105-1.png)
+![QQ20151105-1](http://i.imgur.com/74C7LVV.png)
 
 
 如图提交代码发生冲突时,`右键-解决冲突-启用外部合并工具` 启动`Beyond Compare`,
 
-![QQ20151105-4](../img/2015/QQ20151105-4.png)
+![QQ20151105-4](http://i.imgur.com/x1xPuWq.png)
 
 
 如图,打开了冲突代码,分成左中右三栏,左边是本地,右边是远程,中间是上一次的,工具栏可以设置仅显示不同代码或全部代码,底栏是最后合并后的代码,点击三栏中要保留的代码段就放到底栏,修改后点保存按钮,然后从菜单栏退出.
 
-![QQ20151105-5](../img/2015/QQ20151105-5.png)
+![QQ20151105-5](http://i.imgur.com/iD2Ma3l.png)
 
 
 回到sourcetree,在工作副本栏有刚解决冲突的文件,点击提交并推送.这样就解决了冲突.
@@ -31,7 +31,7 @@ description:
 安装SourceTree和BeyondCompare,打开BeyondCompare菜单栏,Install Command Line Tools.
 打开SourceTree的设置-Diff项,如图设置,输入路径和变量.
 
-![QQ20151105-2](../img/2015/QQ20151105-2.png)
+![QQ20151105-2](http://i.imgur.com/0Ii02Ss.png)
 
 
 

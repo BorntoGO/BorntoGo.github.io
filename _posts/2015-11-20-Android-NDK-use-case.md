@@ -131,7 +131,7 @@ NDK就是交叉编译工具.
    
    嗯，最后是丑陋不堪的效果图：
    
-   ![效果图](../img/2015112001.JPG)
+   ![效果图](http://i.imgur.com/30JuoL6.jpg)
    
 
 代码地址 <https://github.com/BorntoGO/NDK-demo>
