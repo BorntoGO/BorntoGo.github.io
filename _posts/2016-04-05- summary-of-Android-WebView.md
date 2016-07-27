@@ -22,6 +22,7 @@ tags: [WebView, WebView与JS交互]
 	String htmlString = "<p>This is HTML text</p>";
     webView.loadData(htmlString, "text/html", "utf-8");
 	```
+	
 根据XX不同，分为WebViewClient、WebChromeClient、WebSettings。WebViewClient处理各种通知、请求事件;WebChromeClient辅助处理Javascript的对话框、加载进度等；WebSettings负责Settings，像缓存等，此处只简单介绍不按上文结构。
 
 
@@ -67,7 +68,9 @@ tags: [WebView, WebView与JS交互]
         }
     }
 ```    
+
 ### Android调用JS
+
 4.4以上与上文类似，4.3及以下略不同：
 [Android中Java和JavaScript交互](http://droidyue.com/blog/2014/09/20/interaction-between-java-and-javascript-in-android/)
 
