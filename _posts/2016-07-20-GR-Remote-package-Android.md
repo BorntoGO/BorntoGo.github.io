@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 明明都失业了，还蛋疼把GR Remote网页做成了APP
+title: 明明都失业了，还蛋疼把 GR Remote 网页做成了APP
 category: Android
-tags: [WebView, GRRemote]
+tags: [WebView, GRRemote, 绑定, 重连, wifi]
 ---
 
 ##### 展示：
@@ -14,9 +14,8 @@ tags: [WebView, GRRemote]
 
 ![Imgur](http://i.imgur.com/MMhMzv2.gif)
 
-
-[youtube](https://youtu.be/JaI_4JfLw9g)
-
+youtube
+<iframe width="420" height="315" src="https://www.youtube.com/embed/JaI_4JfLw9g" frameborder="0" allowfullscreen></iframe>
 
 ##### 简介：
 简单说就是把这个 [GR Remote](http://www.ricoh-imaging.co.jp/english/products/gr_remote/app/latest-appcache/index.html) 网页做了缓存，然后提供wifi绑定、重连功能。
@@ -90,6 +89,3 @@ tags: [WebView, GRRemote]
 
 说一下标题，公司解散了，已经玩了两个星期，结果发现实在无法安心踏实的玩啊，
 虽然工资没有准时发，但信用卡账单还是准时躺在邮箱了呢 （手动doge）。
-
-
-
