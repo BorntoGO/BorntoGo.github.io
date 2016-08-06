@@ -1,7 +1,6 @@
 ---
 layout: "post"
-title: "树莓派读取模拟传感器数据(ADC0832)的方法以及对spi.xfer2方法的理解 ———— Raspberry Pi 使用笔记(4)"
-date: "2016-08-06 17:04"
+title: "树莓派读取模拟传感器数据(ADC0832)的方法以及对spi.xfer2方法的理解 —— Raspberry Pi 使用笔记(4)"
 category: Raspberry Pi
 tags: [analog transducer, Raspberry Pi]
 ---

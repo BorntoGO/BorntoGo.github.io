@@ -2,7 +2,7 @@
 layout: post
 title: 使用 mocha 进行 RESTful API 测试
 category: [testing]
-tags: [mocha, RESTful, testing, node.js]
+tags: [mocha, RESTful, testing, node.js, 安利]
 ---
 
 简单来说mocha是一个测试框架,支持BDD和TDD不同风格的接口,支持before,after等前/后置条件.可以在这个框架下使用各种断言库(断言就是作出一个预测,不符合则抛出,mocha就是整合这些断言结果).
@@ -103,6 +103,3 @@ SuperTest 可以直接驱动express,用来做单元测试超级方便的.
 <http://ju.outofmemory.cn/entry/86908>
 <https://www.npmjs.com/package/supertest>
 <http://www.moye.me/2014/11/22/bdd_mocha/>
-
-
-

@@ -2,7 +2,7 @@
 layout: post
 title: 安利一个代码冲突合并工具 Beyond Compare
 category: github
-tags: [sourcetree, github, beyondcompare]
+tags: [sourcetree, github, beyondcompare, 安利]
 keywords:
 description:
 ---
@@ -47,4 +47,3 @@ description:
 
 链接内有其他版本控制软件的设置方法:
 <http://www.scootersoftware.com/support.php?zz=kb_vcs_osx#sourcetree>
-

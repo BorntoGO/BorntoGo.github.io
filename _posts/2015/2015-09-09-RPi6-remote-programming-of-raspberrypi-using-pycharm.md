@@ -1,9 +1,8 @@
 ---
 layout: "post"
-title: "[安利]使用Pycharm远程调试树莓派 ———— Raspberry Pi 使用笔记(6)"
-date: "2015-09-09 17:30"
+title: "使用Pycharm远程调试树莓派 ———— Raspberry Pi 使用笔记(6)"
 category: Raspberry Pi
-tags: [PyCharm, Raspberry Pi]
+tags: [PyCharm, Raspberry Pi, 安利]
 ---
 
 连接Pi的效果图:
