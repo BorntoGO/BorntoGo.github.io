@@ -1,6 +1,6 @@
 ---
 layout: "post"
-title: "使用Pycharm远程调试树莓派 ———— Raspberry Pi 使用笔记(6)"
+title: "使用Pycharm远程调试树莓派 —— Raspberry Pi 使用笔记(6)"
 category: Raspberry Pi
 tags: [PyCharm, Raspberry Pi, 安利]
 ---

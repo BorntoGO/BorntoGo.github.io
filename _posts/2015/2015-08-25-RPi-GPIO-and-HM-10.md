@@ -1,6 +1,6 @@
 ---
 layout: post
-title: RPi.GPIO 和 HM-10 蓝牙模块 ———— Raspberry Pi 使用笔记(1)
+title: RPi.GPIO 和 HM-10 蓝牙模块 —— Raspberry Pi 使用笔记(1)
 category: Raspberry Pi
 tags: [Raspberry Pi, GPIO, HM-10]
 keywords:

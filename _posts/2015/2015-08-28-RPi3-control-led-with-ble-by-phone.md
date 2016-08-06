@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 手机通过BLE控制LED & 使用LED显示红外传感器状态 ———— Raspberry Pi 笔记(3)
+title: 手机通过BLE控制LED & 使用LED显示红外传感器状态 —— Raspberry Pi 笔记(3)
 category: Raspberry Pi
 tags: [BLE, GPIO, LED, infra-red sensor, Raspberry Pi]
 ---

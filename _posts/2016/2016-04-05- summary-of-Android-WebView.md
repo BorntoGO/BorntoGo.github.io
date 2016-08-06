@@ -9,7 +9,7 @@ tags: [WebView, WebView与JS交互]
 1. `AndroidManifest.xml` 添加网络访问权限 `<uses-permission android:name="android.permission.INTERNET" /> `
 
 2. XML添加一个 `<WebView />`,Java 中`WebView webView = (WebView) findViewById(R.id.webView);`
-3. 然后加载网页，
+3. 然后加载网页,
 
 	```
 	//加载网页
@@ -17,12 +17,12 @@ tags: [WebView, WebView与JS交互]
 	
 	//加载本地网页
 	webView.loadUrl("file:///android_asset/test.html")；
-	
+
 	//加载字符串
 	String htmlString = "<p>This is HTML text</p>";
-    webView.loadData(htmlString, "text/html", "utf-8");
+  webView.loadData(htmlString, "text/html", "utf-8");
 	```
-	
+
 根据XX不同，分为WebViewClient、WebChromeClient、WebSettings。WebViewClient处理各种通知、请求事件;WebChromeClient辅助处理Javascript的对话框、加载进度等；WebSettings负责Settings，像缓存等，此处只简单介绍不按上文结构。
 
 
@@ -30,16 +30,16 @@ tags: [WebView, WebView与JS交互]
 ### shouldOverrideUrlLoading()
 
 初次 使用上面的loadUrl时会调用，`return true`则在当前webview里处理页面(单页面)。
-    
-    
-    
+
+
+
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, String url) {
         view.loadUrl(url);
         return true;
     }
-    
-          
+
+
 还可以根据后缀名过滤apk，自己处理下载等事件。
 
 
@@ -47,7 +47,8 @@ tags: [WebView, WebView与JS交互]
 
 
 启用JS
-```webView.getSettings().setJavaScriptEnabled(true);```
+
+`webView.getSettings().setJavaScriptEnabled(true);`
 
 添加JS接口:
 ```webView.addJavascriptInterface(new JsInterface(this), "AndroidWebView");```
@@ -92,13 +93,13 @@ public boolean onJsAlert(WebView view, String url, String message, JsResult resu
 2. 在手机中开启开发者模式（4.4+点七次系统版本号），开启 USB调试；
 3. 在电脑端打开```chrome://inspect```，选中 发现USB硬件 ；
 4. 开启WebView调试还要在App下添加下面这句：
-   
+
     ```
 	if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
 	    WebView.setWebContentsDebuggingEnabled(true);
     }
     ```
-    
+
 5. 发现硬件后inspect 就可以像调试普通网页一样调试Android中的WebView了。
 
 其他用法见链接，此处只说WebView：
@@ -119,33 +120,34 @@ public boolean onJsAlert(WebView view, String url, String message, JsResult resu
 
 
 ```
-    private boolean mIsExit = false;
-    
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-    	//如果是KEYCODE_BACK 且 canGoBack()就goBack()
-        if ((keyCode == KeyEvent.KEYCODE_BACK) && webView.canGoBack()) {
-            webView.goBack();
-            toolbar.setVisibility(View.GONE);
-            bottomBar.setVisibility(View.VISIBLE);
-            mReward.setVisibility(View.GONE);
-            return true;
-        } else if ((keyCode == KeyEvent.KEYCODE_BACK) && !mIsExit) {
-        //如果只是KEYCODE_BACK则提示是否退出，1000内再按就退出 
-            mIsExit = true;
-            new Handler().postAtTime(new Runnable() {
-                @Override
-                public void run() {
-                 mIsExit = false;
-                }
-            }, SystemClock.uptimeMillis() + 1000);
-            	Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
-            	return false;
-        }
-        finish();
-        return super.onKeyDown(keyCode, event);
-    }
+private boolean mIsExit = false;
+
+@Override
+public boolean onKeyDown(int keyCode, KeyEvent event) {
+	//如果是KEYCODE_BACK 且 canGoBack()就goBack()
+		if ((keyCode == KeyEvent.KEYCODE_BACK) && webView.canGoBack()) {
+				webView.goBack();
+				toolbar.setVisibility(View.GONE);
+				bottomBar.setVisibility(View.VISIBLE);
+				mReward.setVisibility(View.GONE);
+				return true;
+		} else if ((keyCode == KeyEvent.KEYCODE_BACK) && !mIsExit) {
+		//如果只是KEYCODE_BACK则提示是否退出，1000内再按就退出
+				mIsExit = true;
+				new Handler().postAtTime(new Runnable() {
+						@Override
+						public void run() {
+						 mIsExit = false;
+						}
+				}, SystemClock.uptimeMillis() + 1000);
+					Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
+					return false;
+		}
+		finish();
+		return super.onKeyDown(keyCode, event);
+}
 ```
+
 ### 项目中的使用
 除了上面提到的，下面几个也用在了项目中：
 
@@ -155,8 +157,8 @@ public boolean onJsAlert(WebView view, String url, String message, JsResult resu
 - `onReceivedError()` 用来处理错误，比如404替换成错误页。
 - `onPageStarted()` 在这里用`getUrl())`,从中过滤出文章ID之类的，同时根据`getUrl().length()`判断是主页还是其他页面，从而决定Toolbar的显示样式。
 
-- 从`getUrl()`过滤出文章id：
-  
+- 从`getUrl()`过滤出文章id
+
   ```               
     String[] parts = url.split("newsId=");
     parts = parts[1].split("&token");
@@ -167,4 +169,3 @@ public boolean onJsAlert(WebView view, String url, String message, JsResult resu
 [WebView - Android SDK | Android Developers](http://androiddoc.qiniudn.com/reference/android/webkit/WebView.html)
 
 [7.5.1 WebView(网页视图)基本用法](http://www.runoob.com/w3cnote/android-tutorial-webview.html)
-

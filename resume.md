@@ -1,10 +1,15 @@
-[TOC]
+---
+layout: page
+title: 简历
+---
+
+
 ### 基本信息
 - 个人信息：袁小山/男/26
 - 教育经历:
   - 本科/中国石油大学胜利学院/计算机科学与技术(2012-2014)
   - 专科/山东农业工程学院/计算机应用技术(2008-2011)
-- 工作经验：1年（杭州岩泽网络科技 2015.8-2016.7）
+- 工作经验：1年（杭州岩泽网络科技 2015.7-2016.7）
 - 手机：18606539361
 - 邮箱: <ateveryuan@gmail.com>
 - github：[borntogo.github.com](borntogo.github.com)
@@ -55,7 +60,7 @@ TCP/IP、RPC、SOCKET、WEB SOCKET等通讯协
 ##### ada项目
 一个提供武术训练和行业资讯的APP，通过手环实时反映分析当前训练情况。涉及低功耗蓝牙（BLE）协议、算法、webview等，
 - 负责统筹整个项目(协调需求、任务分配、进度监督等)。
-- 完成了Android版本(不包含matlab、h5部分)，包括四大组件、LBS相关，BLE协议解析、BLE多设备连接、NDK整合、各种列表展示、服务、广播、webview、http通信(OKHTTP、Volley)等。
+- 完成了Android版本(不包含matlab、h5部分)，包括四大组件、LBS相关，BLE协议解析、BLE多设备连接、NDK整合、各种列表展示、服务、广播、webview、http通信(OKHTTP、Volley)、微信支付宝支付等。
 - 提供技术支持，帮助iOS方面完成C语言汇编、BLE协议解析、BLE多设备连接。
 - 完成了WEB管理端大部分功能。(Angular.js+Bootstrap+SBAdmin)
 - 协助实现后端部分接口（Node.js + Express + mongdb）
