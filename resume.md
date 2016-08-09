@@ -12,7 +12,7 @@ title: 简历
 - 工作经验：1年(杭州岩泽网络科技 2015.7-2016.7)
 - 手机：18606539361
 - 邮箱: <ateveryuan@gmail.com>
-- github：[borntogo.github.com](http://borntogo.github.io/)
+- github：[borntogo.github.com](http://borntogo.github.com/)
 - 博客：[borntogo.github.io](http://borntogo.github.io/)
 
 
