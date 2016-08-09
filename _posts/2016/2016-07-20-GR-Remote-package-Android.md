@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 明明都失业了，还蛋疼把 GR Remote 网页做成了APP
+title: 明明都失业了，还蛋疼把 GR Remote 做成了APP
 category: Android
 tags: [WebView, GRRemote, 绑定, 重连, wifi]
 ---

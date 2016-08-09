@@ -13,9 +13,9 @@ tags: [BLE, 断线重连]
 
 ### BLE多设备连接
 
-刚开始完全不知道该怎么搞,官方文档里也没提多设备,后来发现竟然直接连就行了,
+刚开始完全不知道该怎么搞,官方文档里也没提多设备,
 
-刚开始得到答案的时候我是拒绝接受的,我已经想了辣么久为什么答案竟然直接连接就可以了~
+刚开始得到答案的时候我是拒绝的,因为我已经想了辣么久，答案竟然是直接连接就可以~
 
 #### 方法一 直接连接
 
@@ -64,7 +64,7 @@ mBLEService.connect(deviceAddress);
 
 ### 绑定
 
-大概思路就是展示一个过滤后的设备列表,使用`SharedPreferences`把要绑定MAC地址存储起来,启动的时候去读取,如果存在执行标准的BLE连接操作,省略了扫描这一部.
+大概思路就是展示一个过滤后的设备列表,使用`SharedPreferences`把要绑定MAC地址存储起来,启动的时候去读取,如果存在执行标准的BLE连接操作,省略了扫描这一步.
 
 ### 判断蓝牙开启状态
 
@@ -73,7 +73,7 @@ mBLEService.connect(deviceAddress);
 具体方法就是先判断requestCode是否为`2`,如果是再判断resultCode是否为`－1`
 
 ```
-//  0 开启成功, -1 开启失败
 // public static final int REQUEST_ENABLE_BT = 2;
 // public static final int RESULT_OK = -1;
+//  0 开启成功, -1 开启失败
 ```
