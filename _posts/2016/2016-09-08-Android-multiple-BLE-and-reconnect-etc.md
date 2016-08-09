@@ -1,12 +1,10 @@
 ---
 layout: "post"
 title: "Android BLE 的使用:多设备连接和断线重连等"
-date: "2016-08-07 22:38"
+date: "2016-08-09 22:38"
 category: Android
 tags: [BLE, 断线重连]
 ---
-
-[TOC]
 
 一直想写一篇BLE的使用总结,正好昨天翻笔记翻到了BLE多设备这个,为了防止忘掉(iOS端已然忘掉),顺便整理一下.
 
@@ -36,7 +34,7 @@ public boolean connect(final String address){
 ```
 
 
-##### 方法二 每一个设备对应一个`BluetoothGattCallback`回调
+#### 方法二 每一个设备对应一个`BluetoothGattCallback`回调
 
 就是每个设备都新建一个`BluetoothGattCallback`的回调,像这样:
 

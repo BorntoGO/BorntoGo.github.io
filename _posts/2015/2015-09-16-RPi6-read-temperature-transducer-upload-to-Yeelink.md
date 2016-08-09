@@ -1,11 +1,11 @@
 ---
 layout: "post"
-title: "使用树莓派读取温度传感器(数字型)数据并上传Yeelink —— Raspberry Pi 使用笔记(5)"
+title: "使用树莓派读取温度传感器(数字型)数据并上传Yeelink —— Raspberry Pi 使用笔记(6)"
 category: Raspberry Pi
 tags: [temperature transducer, Raspberry Pi, Yeelink]
 ---
 
-###Pi读取温度并上传Yeelink
+### Pi读取温度并上传Yeelink
 
 昨天找到一款数字温度传感器DS18B20,先拿来传到Yeelink
 
