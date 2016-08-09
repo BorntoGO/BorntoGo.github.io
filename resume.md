@@ -85,7 +85,7 @@ title: 简历
 
 ##### GR Remote Android版
 利用失业后的第二周把 GR Remote 网页版打包成APP，添加了wifi绑定和缓存功能。
-github：https://github.com/BorntoGO/GR-Remote-Package
+github：<https://github.com/BorntoGO/GR-Remote-Package>
 
 ### 自我评价
 - 诚信，谨守职业道德。
