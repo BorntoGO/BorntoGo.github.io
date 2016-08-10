@@ -17,6 +17,7 @@ tags: [analog transducer, Raspberry Pi]
 - 第二种方法需要考虑电压问题,也就是连接不同的电阻，然后同样面临无转换公式可用的问题。
 
 下边介绍第一种方法
+
 ```
 连接方式:温度传感器 -> ADC0832 -> 树莓派
 在树莓派上使用SPI,用到 Python Spidev
@@ -35,6 +36,7 @@ CLK: 时钟
 DI: 主往从送
 DO: 从送主往
 ```
+
 启用SPI
 
 从ssh 登录后,设置:
@@ -114,7 +116,7 @@ while True:
     time.sleep(1)
 ```
 
-https://github.com/simonmonk/raspberrypi_cookbook/blob/master/code/adc_tmp36.py
+<https://github.com/simonmonk/raspberrypi_cookbook/blob/master/code/adc_tmp36.py>
 
 用到的方法:
 
@@ -135,9 +137,7 @@ r = spi.xfer2([1, (8 + channel) << 4, 0])
 adc_out = ((r[1]&3) << 8) + r[2]
 ```
 
-https://github.com/simonmonk/raspberrypi_cookbook/blob/master/code/adc_tmp36.py
-
-在上次问题的引用链里看到这个:
+在上次问题的引用链[^1]里看到这个:
 
 
 >程式解說:
@@ -190,21 +190,21 @@ ADC一次可以读取1字节,也就是8位,由低到高,需要读三次.
 
 ##### 参考链接
 
-https://github.com/doceme/py-spidev
+<https://github.com/doceme/py-spidev>
 
 ADC0832 datasheet:
 
-http://html.alldatasheet.com/html-pdf/158145/NSC/ADC0832CCN/120/2/ADC0832CCN.html
-http://blog.sina.com.cn/s/blog_66eab1060100j78l.html
+<http://html.alldatasheet.com/html-pdf/158145/NSC/ADC0832CCN/120/2/ADC0832CCN.html>
+<http://blog.sina.com.cn/s/blog_66eab1060100j78l.html>
 
-MCP3008 datasheet 和 连接方法(跟我看的那个例子比较像):
+[^1]: MCP3008 datasheet 和 连接方法(跟我看的那个例子比较像):
 
-http://atceiling.blogspot.com/2014/04/raspberry-pi-mcp3008.html#.Ve01WXvG6JU
+<http://atceiling.blogspot.com/2014/04/raspberry-pi-mcp3008.html#.Ve01WXvG6JU>
 
-http://tec.gekius.com/blog/935.html
+<http://tec.gekius.com/blog/935.html>
 
 
 
 Linux下相关总线介绍
 
-http://www.haifux.org/lectures/258/gpio_spi_i2c_userspace.pdf
+<http://www.haifux.org/lectures/258/gpio_spi_i2c_userspace.pdf>
