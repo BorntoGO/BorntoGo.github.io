@@ -63,6 +63,7 @@ sudo pip install spidev
 
 让SPI_MOSI 接 SPI_MISO,测试是否可以正常传送,
 可以拔掉一根试一下,
+
 ```
 >>> import spidev
 >>> spi = spidev.SpiDev()
@@ -75,6 +76,7 @@ sudo pip install spidev
 ```
 
 ADO与树莓派的连接:
+
 ```
 /CS - SPI_CE0_N/SPI_CE1_N  #此处连接了0
 CLK - SPI_SCLK
@@ -90,6 +92,7 @@ DO - SPI_MISO
 ADC我用的是ADC0832(2通道,8位),找到的资料都是以MCP3008(8通道,10位)为例子,对照着弄了一下,接线没什么问题,但是代码部分analog_read(channel)这个函数刚开始没看明白.
 
 adc_tmp36.py
+
 ```
 import spidev, time
 
@@ -110,9 +113,11 @@ while True:
     print("Temp C=%f\t\tTemp f=%f" % (temp_c, temp_f))
     time.sleep(1)
 ```
+
 https://github.com/simonmonk/raspberrypi_cookbook/blob/master/code/adc_tmp36.py
 
 用到的方法:
+
 ```
 open(bus, device)
 
@@ -124,18 +129,20 @@ xfer2(list of values[, speed_hz, delay_usec, bits_per_word])
 
 对spi.xfer2()的理解
 adc_tmp36.py
+
 ```
 r = spi.xfer2([1, (8 + channel) << 4, 0])
 adc_out = ((r[1]&3) << 8) + r[2]
 ```
+
 https://github.com/simonmonk/raspberrypi_cookbook/blob/master/code/adc_tmp36.py
 
 在上次问题的引用链里看到这个:
 
-```
-程式解說:
+
+>程式解說:
 程式中有一行spi.xfer2，他會送出3 Bytes 給Device，第一個位元是1，相當於二進位的00000001，″8+ch″表示Device的頻道位置，變成"00001000"，″<<4″往左移 4個位元(bits)，變成 ″10000000"，最後一個字元是0，亦即 "00000000"。而程式中 "spi.xfer2([1,(8+channel)<<4,0])"會送出 " 00000001 10000000 00000000" 給接收設備，設備回應三個Bytes回來，而傳回值會放在最右邊10個Bits位置，該值介於0跟1023之間。我們可根據這個數字，判斷光度、溫度等類比的訊號。
-```
+
 
 用表格表示
 
