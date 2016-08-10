@@ -93,7 +93,7 @@ DO - SPI_MISO
 
 ADC我用的是ADC0832(2通道,8位),找到的资料都是以MCP3008(8通道,10位)为例子,对照着弄了一下,接线没什么问题,但是代码部分analog_read(channel)这个函数刚开始没看明白.
 
-adc_tmp36.py
+adc_tmp36.py[^1]
 
 ```
 import spidev, time
@@ -116,7 +116,6 @@ while True:
     time.sleep(1)
 ```
 
-<https://github.com/simonmonk/raspberrypi_cookbook/blob/master/code/adc_tmp36.py>
 
 用到的方法:
 
@@ -137,7 +136,7 @@ r = spi.xfer2([1, (8 + channel) << 4, 0])
 adc_out = ((r[1]&3) << 8) + r[2]
 ```
 
-在上次问题的引用链[^1]里看到这个:
+在上次问题的引用链[^2]里看到这个:
 
 
 >程式解說:
@@ -197,14 +196,13 @@ ADC0832 datasheet:
 <http://html.alldatasheet.com/html-pdf/158145/NSC/ADC0832CCN/120/2/ADC0832CCN.html>
 <http://blog.sina.com.cn/s/blog_66eab1060100j78l.html>
 
-[^1]: MCP3008 datasheet 和 连接方法(跟我看的那个例子比较像):
-
-<http://atceiling.blogspot.com/2014/04/raspberry-pi-mcp3008.html#.Ve01WXvG6JU>
-
 <http://tec.gekius.com/blog/935.html>
-
-
 
 Linux下相关总线介绍
 
 <http://www.haifux.org/lectures/258/gpio_spi_i2c_userspace.pdf>
+
+
+[^1]: <https://github.com/simonmonk/raspberrypi_cookbook/blob/master/code/adc_tmp36.py>
+
+[^2]: <http://atceiling.blogspot.com/2014/04/raspberry-pi-mcp3008.html#.Ve01WXvG6JU>
