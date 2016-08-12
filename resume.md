@@ -58,7 +58,7 @@ title: 简历
 一个提供专业训练和行业资讯的APP，通过手环实时反映分析当前训练情况。
 
 - 负责统筹整个项目(协调需求、任务分配、进度监督等)。
-- 独自实现Android版本(不包含matlab、html部分)，解决了BLE收发协议解析、BLE多设备连接、NDK混编等难题，其他使用的技术包括LBS相关，常用容器展示、服务、广播、webview、http通信(OKHTTP、Volley)、线程、第三方API登录支付短信验证等。
+- Android版本主程(不包含matlab、html部分)，解决了BLE收发协议解析、BLE多设备连接、NDK混编等难题，其他使用的技术包括LBS相关，常用容器展示、服务、广播、webview、http通信(OKHTTP、Volley)、线程、第三方API登录支付短信验证等。
 - 提供技术支持，帮助iOS方面完成C语言混编、BLE协议解析、BLE多设备连接。
 - 完成了WEB管理端大部分功能(AngularJs+Bootstrap+SBAdmin)。
 - 协助实现后端部分接口(Node.js + Express + mongdb)。
