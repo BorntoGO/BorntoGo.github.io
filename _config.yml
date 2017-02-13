@@ -1,12 +1,12 @@
 # Site settings
-title: BorntoGo
+title: atever
 email: justregisterid@gmail.com
 description: "Android,HTML,CSS,Node"
 permalink: /:year/:month/:day/:title.html
 baseurl: ""
-url: "http://borntogo.github.io"
-atom-baseurl: "http://borntogo.github.io"
-author: "Kyle Yuan"
+url: "http://atever.github.io"
+atom-baseurl: "http://atever.github.io"
+author: "Atever Yuan"
 
 # Build settings
 # permalink: date

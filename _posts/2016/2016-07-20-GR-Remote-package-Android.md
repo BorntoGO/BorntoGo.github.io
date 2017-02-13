@@ -73,10 +73,10 @@ youtube
 
 
 ##### 下载地址
-[https://github.com/BorntoGO/GR-Remote-Package/blob/master/app/GR_Remote_0.1.apk](https://github.com/BorntoGO/GR-Remote-Package/blob/master/app/GR_Remote_0.1.apk)
+[https://github.com/atever/GR-Remote-Package/blob/master/app/GR_Remote_0.1.apk](https://github.com/atever/GR-Remote-Package/blob/master/app/GR_Remote_0.1.apk)
 
 ##### 项目地址
-[https://github.com/BorntoGO/GR-Remote-Package](https://github.com/BorntoGO/GR-Remote-Package)
+[https://github.com/atever/GR-Remote-Package](https://github.com/atever/GR-Remote-Package)
 
 
 

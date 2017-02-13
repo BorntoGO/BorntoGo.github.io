@@ -134,7 +134,7 @@ NDK就是交叉编译工具.
    ![效果图](http://i.imgur.com/30JuoL6.jpg)
 
 
-代码地址 <https://github.com/BorntoGO/NDK-demo>
+代码地址 <https://github.com/atever/NDK-demo>
 
 ### 相关链接
 虽然工具不同,方式不一,蛋整体的思路是一样的,具体操作可以参照第二个链接,不同的地方主要是上面第6条,另外NDK的Samples目录下也有一下Sample.

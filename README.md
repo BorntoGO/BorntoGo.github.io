@@ -1,6 +1,6 @@
 个人博客，主题修改自 [https://github.com/taizilongxu/jekyll_blog_source](https://github.com/taizilongxu/jekyll_blog_source)
 
-使用请fork 这里 [https://github.com/BorntoGO/jekyll_blog_source](https://github.com/BorntoGO/jekyll_blog_source)
+使用请fork 这里 [https://github.com/atever/jekyll_blog_source](https://github.com/atever/jekyll_blog_source)
 
 使用注意：
 

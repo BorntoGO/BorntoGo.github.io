@@ -12,8 +12,8 @@ title: 简历
 - 工作经验：1年(杭州岩泽网络科技 2015.7-2016.7)
 - 手机：18606539361
 - 邮箱: <ateveryuan@gmail.com>
-- github：[github.com/borntogo](https://github.com/borntogo)
-- 博客：[borntogo.github.io](http://borntogo.github.io/)
+- github：[github.com/atever](https://github.com/atever)
+- 博客：[atever.github.io](http://atever.github.io/)
 
 
 ### 期望
@@ -89,7 +89,7 @@ title: 简历
 
 ##### GR Remote Android版
 利用失业后的第二周把 GR Remote 网页版打包成APP，添加了wifi绑定和缓存功能。
-github：<https://github.com/BorntoGO/GR-Remote-Package>
+github：<https://github.com/atever/GR-Remote-Package>
 
 ### 自我评价
 - 诚信，谨守职业道德。
